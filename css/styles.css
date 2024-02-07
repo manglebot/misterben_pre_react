@@ -1,0 +1,279 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #e4e6de;
+  color: #363a40;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  min-height: 100%;
+  display: flex;
+}
+.container > .left {
+  width: 30%;
+  max-width: 300px;
+  overflow: auto;
+  height: 50rem;
+  flex-grow: 1;
+  padding: 1em 0 0 1em;
+}
+.container > .right {
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  flex-grow: 50;
+}
+
+.right .title {
+  display: none;
+}
+
+.right p {
+  font-weight: 300;
+}
+
+.folio-item,
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.folio-item > a > div:first-child {
+  flex-shrink: 1;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.folio-item > div:last-child {
+  flex-shrink: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.about h1,
+.about p {
+  padding-left: 1rem;
+  max-width: 600px;
+}
+
+a {
+  color: black;
+  text-decoration-color: orange;
+  text-decoration-style: solid;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-style: wavy;
+}
+
+#contact {
+  padding-bottom: 2em;
+}
+
+/* menu */
+.menu input[type="radio"],
+.menu-toggle {
+  display: none;
+}
+
+.menu > li > label {
+  display: block;
+  cursor: pointer;
+  padding: 0.7em;
+}
+.menu > li > label:hover {
+  background-color: #fff;
+}
+.menu input[type="radio"]:checked {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height 0.35s ease-out, opacity 0.1s ease-in 0.2s;
+}
+
+/* menu text stying */
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#main-logo div {
+  padding: 0.3rem;
+}
+
+/* work page */
+.folio-item {
+  height: auto;
+  max-height: 300px;
+}
+
+.folio-item a {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(min(1vw, 1rem), 250px, max(4vw, 4rem));
+  position: relative;
+  text-decoration: none;
+  color: #363a40;
+}
+
+.folio-item a:hover {
+  background-color: #fff;
+  transition: background-color 1s linear;
+  -moz-transition: background-color 1s linear;
+  -webkit-transition: background-color 1s linear;
+  -ms-transition: background-color 1s linear;
+}
+
+.folio-item div {
+  max-height: 280px;
+  padding-left: 1rem;
+}
+
+.folio-item div img {
+  max-height: 280px;
+}
+
+/* inner pages start */
+body.inner-page h1 {
+  font-size: clamp(min(1vw, 1rem), 250px, max(4vw, 4rem));
+}
+
+.inner-page main {
+  padding: 0 2em 2em 2em;
+  width: 90vw;
+  display: block;
+  overflow: auto;
+  min-height: 20px;
+  max-width: 1087px;
+}
+
+.inner-page main img {
+  width: 100%;
+  max-width: 1087px;
+}
+
+.caption {
+  margin-top: -0.7em;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+/* inner pages end */
+
+/*  VIDEO */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (change this value based on your video aspect ratio) */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1255px) {
+  .inner-page main {
+    max-width: 90%;
+    position: relative;
+    right: 0;
+    padding: 30px 0 0 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .folio-item a {
+    font-size: clamp(min(0.5vw, 0.5rem), 150px, max(2.5vw, 2.5rem));
+    position: relative;
+    text-decoration: none;
+    color: #363a40;
+    padding-left: 1rem;
+  }
+
+  .folio-item div {
+    padding-left: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 880px) {
+  .container {
+    overflow: hidden;
+    transform: translateX(-300px);
+    width: calc(100% + 300px);
+    transition: transform 0.2s ease-out;
+  }
+  .container > .left {
+    min-width: 300px;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    left: 20px;
+    top: 10px;
+    z-index: 9999;
+    margin-left: 300px;
+  }
+  .menu-toggle div {
+    width: 35px;
+    height: 5px;
+    background-color: #555;
+    margin: 6px 0;
+  }
+
+  .first-item {
+    padding-top: 60px;
+  }
+
+  .folio-item div:first-child {
+    display: none;
+  }
+
+  .folio-item {
+    max-height: fit-content;
+  }
+
+  .folio-item a {
+    font-size: 1px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .folio-item div img {
+    width: 93vw;
+    max-height: fit-content;
+  }
+
+  .right .title {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 2rem;
+  }
+}
